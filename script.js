@@ -1,11 +1,10 @@
-function saludar() {
-  alert("¡Hola!");
-}
-
-function saludoDiv() {
-  alert("¡Hola desde el div!");
-}
-
 document
-  .getElementById("container")
-  .addEventListener("click", saludoDiv, mouseEvent);
+  .getElementById("saludarBtn")
+  .addEventListener("click", function (event) {
+    event.stopPropagation();
+    alert("¡Hola!");
+  });
+
+document.getElementById("container").addEventListener("click", function () {
+  alert("¡Hola desde el div!");
+});
